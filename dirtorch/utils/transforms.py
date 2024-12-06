@@ -475,7 +475,7 @@ class RandomTilting(object):
             matrix.append([p1[0], p1[1], 1, 0, 0, 0, -p2[0] * p1[0], -p2[0] * p1[1]])
             matrix.append([0, 0, 0, p1[0], p1[1], 1, -p2[1] * p1[0], -p2[1] * p1[1]])
 
-        A = np.matrix(matrix, dtype=np.float)
+        A = np.matrix(matrix, dtype=float)
         B = np.array(original_plane).reshape(8)
 
         homography = np.dot(np.linalg.pinv(A), B)
